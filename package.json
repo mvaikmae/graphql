@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "echo 'No build step required'",
+    "build": "npm install ejs",
     "start": "node app.js"
   },
   "keywords": [],
