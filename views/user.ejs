@@ -1,0 +1,85 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="sidebar border border-right col-md-3 col-lg-2 p-1 bg-body-secondary">
+            <div class="d-flex flex-row flex-md-column">
+                <h2 class="display-7">Welcome,
+                </h2>
+                <h2 class="text-muted">
+                    <%= result.user.name %>
+                </h2>
+            </div>
+
+            <div class="text-center pt-4">
+                <form id="logout-form" action="/logout" method="POST">
+                    <button type="submit" class="btn btn-outline-danger shadow-sm">Logout</button>
+                </form>
+            </div>
+        </div>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-dark">
+            <nav class="navbar navbar-expand-lg bg-dark">
+                <div class="d-flex align-items-center">
+
+                    <h2 class="display-5 d-none d-md-block text-warning">kood/</h2>
+                    <h2 class="display-5 d-none d-md-block text-light">dashboard</h2>
+                </div>
+            </nav>
+
+            <div class="row align-items-center border rounded shadow-sm my-2 py-2 bg-light">
+                <div class="col-md-8">
+                    <svg width="100%" height="120" preserveAspectRatio="xMinYMin meet">
+                        <line x1="0" y1="-20" x2="0" y2="520" stroke="black" stroke-width="4"></line>
+                        <g class="bar-group" transform="translate(0, 20)">
+                            <rect x="2" width="<%= result.auditSumUp / 5000 %>px" class="bar">
+                            </rect>
+                            <text class="bar-label" y="20" x="10">Done</text>
+                            <text class="bar-value" y="24" x="<%= result.auditSumUp / 5000 + 9 %>">
+                                <%= Math.round(result.auditSumUp / 10000)/100 %>MB
+                            </text>
+                        </g>
+                        <g class="bar-group" transform="translate(0, 60)">
+                            <rect x="2" width="<%= result.auditSumDown / 5000 %>px" class="bar">
+                            </rect>
+                            <text class="bar-label" y="20" x="10">Received</text>
+                            <text class="bar-value" y="22" x="<%= result.auditSumDown / 5000 + 9 %>">
+                                <%= Math.round(result.auditSumDown / 10000)/100 %>MB
+                            </text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="d-inline">Audits ratio:</h2>
+                    <h2 class="d-inline text-warning">
+                        <%= Math.round(result.user.auditRatio * 100)/100%>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row rounded shadow-sm my-3 py-3 bg-light">
+                <h2 class="pb-1">Total XP earned:</h2>
+                <svg width="100%" height="600" viewBox="0 -20 600 600" preserveAspectRatio="xMinYMin meet">
+                    <line x1="0" y1="-20" x2="0" y2="520" stroke="black" stroke-width="4"></line>
+                    <% result.XP_Transfers.forEach((project, i)=> { %>
+                        <g class="rect-group" transform="translate(0, <%= i * 30 %>)">
+                            <rect x="2" width="<%= project.amount / 200 %>" height="20" class="rect-primary"></rect>
+                            <text x="<%= project.amount / 200 + 7 %>" y="15" class="visible-text">
+                                <%= project.object.name %>
+                            </text>
+                            <text x="<%= project.amount / 200 + 12 %>" y="15" class="hidden-text">
+                                <%= project.amount / 1000 %> kB
+                            </text>
+                        </g>
+                        <% }); %>
+                </svg>
+            </div>
+
+        </main>
+
+        <!-- All data for debugging:
+    <pre><%= JSON.stringify(result, null, 2) %></pre> -->
+
+
+
+
+    </div>
+</div>

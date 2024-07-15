@@ -1,0 +1,66 @@
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.rect-primary {
+    fill: var(--bs-primary);
+    transition: fill 0.3s;
+}
+
+.rect-group:hover .rect-primary {
+    fill: var(--bs-warning);
+}
+
+.hidden-text {
+    display: none;
+}
+
+.rect-group:hover .hidden-text {
+    display: block;
+}
+
+.rect-group:hover .visible-text {
+    display: none;
+}
+
+#error-message {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    width: auto;
+    max-width: 90%;
+}
+
+.bar-group {
+    display: flex;
+    align-items: center;
+    fill: var(--bs-primary);
+}
+
+.bar {
+    height: 30px;
+    fill: var(--bs-primary);
+}
+
+.bar-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    fill: white;
+}
+
+.bar-value {
+    font-size: 20px;
+    margin-left: 5px;
+    fill: black
+}
+
+.bar-group:hover .bar {
+    fill: var(--bs-warning);
+}
+
+.bar-group:hover .bar-label {
+    fill: black;
+}
