@@ -20,7 +20,11 @@ app.use(expressLayouts);
 const indexRouter = require('../routes/index');
 const userRouter = require('../routes/user');
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
+app.get('/', (req, res) => {
+    res.send('hello')
+})
+
 app.use('/user', userRouter);
 
 app.use((req, res, next) => {
