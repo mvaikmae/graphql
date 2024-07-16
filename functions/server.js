@@ -9,7 +9,6 @@ const bodyParser = require('body-parser');
 
 console.log('EJS module loaded:', typeof ejs === 'function');
 console.log('Current working directory:', process.cwd());
-console.log('Node modules:', fs.readdirSync(path.join(__dirname, '../node_modules')).join(', '));
 
 
 
