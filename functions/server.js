@@ -28,7 +28,7 @@ app.set('layout', 'boilerplate');
 app.use(expressLayouts);
 
 app.get('/', (req, res) => {
-    res.render('simple');
+    res.render('simple.ejs');
 });
 
 // const indexRouter = require('../routes/index');
