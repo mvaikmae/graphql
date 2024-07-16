@@ -39,12 +39,14 @@ router.post('/login', async (req, res) => {
 
 // main page router
 router.get('/', (req, res) => {
-    const token = req.cookies.jwt;
-    if (token) {
-        res.redirect('/user');
-    } else {
-        res.render('login');
-    }
+    // const token = req.cookies.jwt;
+    // if (token) {
+    //     res.redirect('/user');
+    // } else {
+    //     res.render('login');
+    // }
+    res.send('Index route is working');
+
 });
 
 router.post('/logout', (req, res) => {
