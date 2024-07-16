@@ -5,6 +5,9 @@ const cookieParser = require('cookie-parser');
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 
+console.log('EJS module loaded:', typeof ejs === 'function');
+
+
 const app = express();
 
 app.use(cookieParser());
