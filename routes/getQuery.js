@@ -1,7 +1,4 @@
 const axios = require('axios');
-const userDetailsQuery = require('../queries/userDetailsQuery');
-
-const url = 'https://01.kood.tech/api/graphql-engine/v1/graphql';
 
 
 // GraphQL query function

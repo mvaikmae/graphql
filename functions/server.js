@@ -27,6 +27,6 @@ app.use((req, res, next) => {
     res.status(404).redirect('/');
 });
 
-console.log('Modules:', require('module').builtinModules);
+
 
 module.exports.handler = serverless(app);
