@@ -1,6 +1,11 @@
-[functions]
-  external_node_modules = ["express"]
-  node_bundler = "esbuild"
+[build]
+  functions = "functions"
+  publish = "public"
+
+  [functions]
+node_bundler = "esbuild"
+external_node_modules = ["express"]
+
 
 [[redirects]]
   from = "/*"
