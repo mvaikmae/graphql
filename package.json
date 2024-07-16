@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "build": "echo 'Building...' && npm install && echo 'Build complete'",
-    "postinstall": "ls -la node_modules"
+    "postinstall": "ls -la node_modules && ls -la views"
   },
   "keywords": [],
   "author": "",
