@@ -5,15 +5,11 @@ const cookieParser = require('cookie-parser');
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
-const fs = require('fs');
-
 
 
 //Debug:
 console.log('EJS module loaded:', typeof ejs === 'function');
 console.log('Current working directory:', process.cwd());
-console.log('Node modules:', fs.readdirSync(path.join(__dirname, '../node_modules')).join(', '));
-
 
 
 
@@ -24,7 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.set('views', path.join(__dirname, '../views'));
+// app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 app.set('layout', 'boilerplate');
 app.use(expressLayouts);
