@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
+const router = express.Router();
+
 
 
 //Debug:
